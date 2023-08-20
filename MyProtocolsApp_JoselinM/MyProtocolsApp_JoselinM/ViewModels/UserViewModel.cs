@@ -24,43 +24,43 @@ namespace MyProtocolsApp_JoselinM.ViewModels
 
         public UserRole MyUserRole { get; set; }
 
-        //public UserDTO MyUserDTO { get; set; }
+        public UserDTO MyUserDTO { get; set; }
 
         public UserViewModel()
         {
             MyUser = new User();
             MyUserRole = new UserRole();
-            //MyUserDTO = new UserDTO();
+            MyUserDTO = new UserDTO();
         }
 
-        //funciones 
+        //funciones
 
-        //funcion que carga los datos del objeto de usuario global 
-        //public async Task<UserDTO> GetUserDataAsync(string pEmail)
-        //{
-        //    if (IsBusy) return null;
-        //    IsBusy = true;
+        //funcion que carga los datos del objeto de usuario global
+        public async Task<UserDTO> GetUserDataAsync(string pEmail)
+        {
+            if (IsBusy) return null;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        UserDTO userDTO = new UserDTO();
+            try
+            {
+                UserDTO userDTO = new UserDTO();
 
-        //        userDTO = await MyUserDTO.GetUserInfo(pEmail);
+                userDTO = await MyUserDTO.GetUserInfo(pEmail);
 
-        //        if (userDTO == null) return null;
+                if (userDTO == null) return null;
 
-        //        return userDTO;
+                return userDTO;
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return null;
-        //        throw;
-        //    }
-        //    finally { IsBusy = false; }
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+            finally { IsBusy = false; }
 
 
-        //}
+        }
 
 
         //public async Task<bool> UpdateUser(UserDTO pUser)
@@ -163,7 +163,7 @@ namespace MyProtocolsApp_JoselinM.ViewModels
 
             try
             {
-                // MyUser = new User();
+                MyUser = new User();
 
                 MyUser.Email = pEmail;
                 MyUser.Password = pPassword;

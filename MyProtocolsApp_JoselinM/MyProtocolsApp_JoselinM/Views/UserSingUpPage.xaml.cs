@@ -30,35 +30,37 @@ namespace MyProtocolsApp_JoselinM.Views
             PkrUserRole.ItemsSource = await viewModel.GetUserRolesAsync();
         }
 
-        //    private async void BtnAdd_Clicked(object sender, EventArgs e)
-        //    {
-        //        //capturar el rol que se haya seleccionado en el picker 
-        //        UserRole SelectedUserRole = PkrUserRole.SelectedItem as UserRole;
 
-        //        bool R = await viewModel.AddUserAsync(TxtEmail.Text.Trim(),
-        //                                              TxtPassword.Text.Trim(),
-        //                                              TxtName.Text.Trim(),
-        //                                              TxtBackUpEmail.Text.Trim(),
-        //                                              TxtPhoneNumber.Text.Trim(),
-        //                                              TxtAddress.Text.Trim(),
-        //                                              SelectedUserRole.UserRoleId);
 
-        //        if (R)
-        //        {
-        //            await DisplayAlert(":)", "User created Ok!", "OK");
-        //            await Navigation.PopAsync();
-        //        }
-        //        else
-        //        {
-        //            await DisplayAlert(":(", "Something went wrong...", "OK");
-        //        }
+        private async void BtnAdd_Clicked(object sender, EventArgs e)
+        {
+            //capturar el rol que se haya seleccionado en el picker 
+            UserRole SelectedUserRole = PkrUserRole.SelectedItem as UserRole;
 
-        //    }
+            bool R = await viewModel.AddUserAsync(TxtEmail.Text.Trim(),
+                                                  TxtPassword.Text.Trim(),
+                                                  TxtName.Text.Trim(),
+                                                  TxtBackUpEmail.Text.Trim(),
+                                                  TxtPhoneNumber.Text.Trim(),
+                                                  TxtAddress.Text.Trim(),
+                                                  SelectedUserRole.UserRoleId);
 
-        //    private async void BtnCancel_Clicked(object sender, EventArgs e)
-        //    {
-        //        await Navigation.PopAsync();
-        //    }
-        //}
+            if (R)
+            {
+                await DisplayAlert(":)", "User created Ok!", "OK");
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert(":(", "Something went wrong...", "OK");
+            }
+
+        }
+
+        private async void BtnCancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+        
     }
 }

@@ -64,7 +64,7 @@ namespace MyProtocolsApp_JoselinM.Views
                     {
 
 
-                        //GlobalObjects.MyLocalUser = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
+                        GlobalObjects.MyLocalUser = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
 
                         await Navigation.PushAsync(new StartPage());
                         return;

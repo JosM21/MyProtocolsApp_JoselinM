@@ -25,7 +25,6 @@ namespace MyProtocolsApp_JoselinM.Models
             Active = true;
             IsBlocked = false;
         }
-
         public int UserId { get; set; }
         public string Email { get; set; } = null!;
         public string Password { get; set; } = null!;
@@ -37,7 +36,7 @@ namespace MyProtocolsApp_JoselinM.Models
         public bool? IsBlocked { get; set; }
         public int UserRoleId { get; set; }
 
-        public virtual UserRole? UserRole { get; set; } 
+        public virtual UserRole? UserRole { get; set; } = null!;
 
         //Funciones especificas de llamada a end points del API 
 

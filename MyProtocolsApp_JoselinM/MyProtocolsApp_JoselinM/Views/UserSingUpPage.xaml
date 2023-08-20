@@ -78,7 +78,7 @@
             </Picker>
 
             <StackLayout Orientation="Horizontal" >
-                <Button x:Name="BtnAdd" Text="Apply" CornerRadius="15" BackgroundColor="DarkGreen" FontSize="20" />
+                <Button x:Name="BtnAdd" Text="Apply" CornerRadius="15" BackgroundColor="DarkGreen" FontSize="20" Clicked="BtnAdd_Clicked" />
                 <Button x:Name="BtnCancel" Text="Cancel" CornerRadius="15" BackgroundColor="Maroon" FontSize="20" />
             </StackLayout>
 
