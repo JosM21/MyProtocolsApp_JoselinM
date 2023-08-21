@@ -31,7 +31,7 @@ namespace MyProtocolsApp_JoselinM.Models
 
             try
             {
-                string RouteSufix = string.Format("Usuarios/GetUserInfoByEmail?Pemail={0}", PEmail);
+                string RouteSufix = string.Format("Users/GetUserInfoByEmail?Pemail={0}", PEmail);
                 string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 
                 RestClient client = new RestClient(URL);
@@ -39,11 +39,12 @@ namespace MyProtocolsApp_JoselinM.Models
                 Request = new RestRequest(URL, Method.Get);
 
                 Request.AddHeader(Services.APIConnection.ApiKeyName, Services.APIConnection.ApiKeyValue);
+
                 Request.AddHeader(GlobalObjects.ContentType, GlobalObjects.MimeType);
 
-                 RestResponse response = await client.ExecuteAsync(Request);
+                RestResponse response = await client.ExecuteAsync(Request);
 
-                 HttpStatusCode statusCode = response.StatusCode;
+                HttpStatusCode statusCode = response.StatusCode;
 
                 if (statusCode == HttpStatusCode.OK)
                 {
@@ -72,7 +73,7 @@ namespace MyProtocolsApp_JoselinM.Models
         {
             try
             {
-                string RouteSufix = string.Format("Usuarios/{0}", this.IDUsuario);
+                string RouteSufix = string.Format("Users/{0}", this.IDUsuario);
                  string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 
                 RestClient client = new RestClient(URL);
@@ -86,7 +87,7 @@ namespace MyProtocolsApp_JoselinM.Models
           
 
                 string SerializedModel = JsonConvert.SerializeObject(this);
-                //agregamos el objeto serializado el el cuuerpo del request. 
+                //agregamos el objeto serializado el el cuerpo del request. 
                 Request.AddBody(SerializedModel, GlobalObjects.MimeType);
 
                 RestResponse response = await client.ExecuteAsync(Request);

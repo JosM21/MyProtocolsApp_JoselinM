@@ -63,27 +63,27 @@ namespace MyProtocolsApp_JoselinM.ViewModels
         }
 
 
-        //public async Task<bool> UpdateUser(UserDTO pUser)
-        //{
-        //    if (IsBusy) return false;
-        //    IsBusy = true;
+        public async Task<bool> UpdateUser(UserDTO pUser)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        MyUserDTO = pUser;
+            try
+            {
+                MyUserDTO = pUser;
 
-        //        bool R = await MyUserDTO.UpdateUserAsync();
+                bool R = await MyUserDTO.UpdateUserAsync();
 
-        //        return R;
+                return R;
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //        throw;
-        //    }
-        //    finally { IsBusy = false; }
-        //}
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally { IsBusy = false; }
+        }
 
 
         //función para validar el ingreso del usuario al app por medio del 

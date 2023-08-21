@@ -13,7 +13,7 @@ namespace MyProtocolsApp_JoselinM.Models
     {
         //es mala idea tener un solo objeto de comunicación RestRequest contra el API
         //recomiendo tener uno por cada clase se comunique con el API. 
-        //[JsonIgnore]
+        [JsonIgnore]
         public RestRequest Request { get; set; }
 
         //en este ejemplo usaré los mismos atributos que en el modelo del API
@@ -36,6 +36,8 @@ namespace MyProtocolsApp_JoselinM.Models
         public bool? IsBlocked { get; set; }
         public int UserRoleId { get; set; }
 
+
+
         public virtual UserRole? UserRole { get; set; } = null!;
 
         //Funciones especificas de llamada a end points del API 
@@ -44,6 +46,7 @@ namespace MyProtocolsApp_JoselinM.Models
         //applogin sean correctos o no. 
         public async Task<bool> ValidateUserLogin()
         {
+
             try
             {
                 //usaremos el prefijo de la ruta URL del API que se indica en 
@@ -67,6 +70,11 @@ namespace MyProtocolsApp_JoselinM.Models
 
                 //saber si las cosas salieron bien 
                 HttpStatusCode statusCode = response.StatusCode;
+
+
+
+
+
 
                 if (statusCode == HttpStatusCode.OK)
                 {

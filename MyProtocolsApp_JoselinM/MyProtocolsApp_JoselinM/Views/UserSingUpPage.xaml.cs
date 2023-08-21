@@ -61,6 +61,7 @@ namespace MyProtocolsApp_JoselinM.Views
         {
             await Navigation.PopAsync();
         }
-        
+
+
     }
 }

@@ -63,8 +63,8 @@ namespace MyProtocolsApp_JoselinM.Views
                     if (R)
                     {
 
-
                         GlobalObjects.MyLocalUser = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
+
 
                         await Navigation.PushAsync(new StartPage());
                         return;

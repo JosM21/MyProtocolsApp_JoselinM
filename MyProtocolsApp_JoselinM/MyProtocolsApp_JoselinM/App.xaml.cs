@@ -13,7 +13,7 @@ namespace MyProtocolsApp_JoselinM
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+           // DependencyService.Register<MockDataStore>();
 
 
             MainPage = new NavigationPage(new Page1());

@@ -20,23 +20,28 @@ namespace MyProtocolsApp_JoselinM.Views
                 InitializeComponent();
 
 
-            LoadUserName();
-        }
+                 LoadUserName();
 
-        private void LoadUserName()
-        {
+            }
+
+            private void LoadUserName()
+            {
             LblUserName.Text = GlobalObjects.MyLocalUser.Nombre.ToUpper();
-        }
+            }
 
-        //private async void BtnUserManagment_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new UserManagmentPage());
-        //}
+             private async void BtnUserManagment_Clicked(object sender, EventArgs e)
+            {
+                await Navigation.PushAsync(new UserManagmentPage());
+            
+            }
+          
 
-        //private async void BtnProtocolManagment_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new ProtocolsListPage());
-        //}
+            private async void BtnProtocolManagment_Clicked(object sender, EventArgs e)
+            {
+               // await Navigation.PushAsync(new ProtocolsListPage());
+            }
+
+      
     }
     
 }
